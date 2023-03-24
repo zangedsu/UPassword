@@ -1,0 +1,41 @@
+﻿<Window x:Class="UPassword.Views.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UPassword.Views"
+        mc:Ignorable="d"
+        Title="AddWindow" Height="359" Width="763" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" ShowInTaskbar="False" Topmost="True">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/Block.png"/>
+        </Grid.Background>
+        <Label Content="Название записи:" HorizontalAlignment="Left" Margin="18,15,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="NameInput" HorizontalAlignment="Left" Margin="26,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="{x:Null}" Foreground="#FFA5A5A5"/>
+        <Label x:Name="Label2" Content="URL сайта:" HorizontalAlignment="Left" Margin="18,84,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="UrlInput" HorizontalAlignment="Left" Margin="101,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Background="{x:Null}" Foreground="#FFA5A5A5"/>
+        <Label Content="Логин:" HorizontalAlignment="Left" Margin="267,15,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="LoginInput" HorizontalAlignment="Center" Margin="0,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="{x:Null}" Foreground="#FFA5A5A5"/>
+        <Label x:Name="Label2_Copy" Content="Пароль:" HorizontalAlignment="Left" Margin="267,84,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="PasswordInput" HorizontalAlignment="Center" Margin="0,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="{x:Null}" Foreground="#FFA5A5A5" Cursor="Cross"/>
+        <Label Content="Номер телефона:" HorizontalAlignment="Left" Margin="512,15,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="PhoneInput" HorizontalAlignment="Left" Margin="520,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="{x:Null}" Foreground="#FFA5A5A5"/>
+        <Label x:Name="Label2_Copy1" Content="Email:" HorizontalAlignment="Left" Margin="512,84,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="EmailInput" HorizontalAlignment="Left" Margin="520,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="{x:Null}" Foreground="#FFA5A5A5"/>
+        <Label x:Name="Label2_Copy2" Content="Дополнительная информация:" HorizontalAlignment="Left" Margin="18,150,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="AdditionalInput" HorizontalAlignment="Left" Margin="26,181,0,0" TextWrapping="Wrap" Text="vk.com " VerticalAlignment="Top" Width="702" Background="{x:Null}" Foreground="#FFA5A5A5" Height="80"/>
+        <Button x:Name="AddBtnCMD" Content="Добавить" HorizontalAlignment="Left" Margin="576,285,0,0" VerticalAlignment="Top" Height="38" Width="152" Background="{x:Null}" Foreground="White" BorderBrush="#FF3AC8AB" Click="CmdSave"/>
+        <Button x:Name="CancelBtnCMD" Content="Отмена" HorizontalAlignment="Left" Margin="413,285,0,0" VerticalAlignment="Top" Height="38" Width="152" Background="{x:Null}" Foreground="White" BorderBrush="#FFC8883A" Click="ClickCancel"/>
+        <ComboBox x:Name="ProtocolSelector" HorizontalAlignment="Left" Margin="26,115,0,0" VerticalAlignment="Top" Width="70" Text="" IsReadOnly="True" Height="18" Background="#FFEA2424" BorderBrush="{x:Null}" SelectedIndex="0" FontSize="11">
+            <ComboBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF682DA5"/>
+                    <GradientStop Color="#FF1C798A" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Foreground>
+            <ComboBoxItem Content="https://" Foreground="#FF008244" Background="Black"/>
+            <ComboBoxItem Content="ftp://" Foreground="#FF899013" Background="Black"/>
+            <ComboBoxItem Content="http://" Foreground="#FF1B3FAF" Background="Black"/>
+        </ComboBox>
+    </Grid>
+</Window>

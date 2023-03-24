@@ -1,0 +1,191 @@
+﻿<Window x:Name="MainWindow1" x:Class="UPassword.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UPassword"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="479" Width="1163" WindowStyle="None" HorizontalContentAlignment="Stretch" MinWidth="800" MinHeight="479" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Logo.png" Loaded="MainFormLoaded">
+    <Window.Resources>
+        <Style x:Key="GridStyle1" TargetType="{x:Type Grid}"/>
+    </Window.Resources>
+    <Grid x:Name="MainGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="/abstract-circular-blinds-oscillation-background-3d-rings-wavy-surface-geometric-elements-displacement.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110*" MaxWidth="110"/>
+            <ColumnDefinition Width="1092*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="89*" MaxHeight="45"/>
+            <RowDefinition Height="390*"/>
+        </Grid.RowDefinitions>
+        <Grid Style="{DynamicResource GridStyle1}" x:Name="menuGrid" Margin="10,5,10,0" MinHeight="40" MaxHeight="40" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="966*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <ImageBrush ImageSource="/Block.png"/>
+            </Grid.Background>
+            <Grid.Effect>
+                <DropShadowEffect/>
+            </Grid.Effect>
+            <Label Content="UPassword - менеджер паролей" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Candara" Margin="488,0,0,0" Height="24" Width="177">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF30B2CA"/>
+                        <GradientStop Color="#FF6F2586" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <Button Content="X" HorizontalAlignment="Left" Margin="1096,0,0,0" VerticalAlignment="Center" Width="37" Height="37" SnapsToDevicePixels="True" Background="{x:Null}" Foreground="White" Click="ClickClose">
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF6F2586"/>
+                        <GradientStop Color="#FFC8883A" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+            </Button>
+            <Button Content="_" HorizontalAlignment="Left" Margin="1054,0,0,0" VerticalAlignment="Center" Width="37" Height="37" SnapsToDevicePixels="True" Background="{x:Null}" Foreground="White" Click="ClickMinimize">
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF6F2586"/>
+                        <GradientStop Color="#FF3AB1C8" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+            </Button>
+            <Button Content="Настройки" HorizontalAlignment="Left" Margin="919,0,0,0" VerticalAlignment="Center" Width="88" Height="36" SnapsToDevicePixels="True" Background="{x:Null}" Foreground="White" Click="ClickSettings" HorizontalContentAlignment="Center">
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF6F2586" Offset="0"/>
+                        <GradientStop Color="#FF58EAE0" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+            </Button>
+            <Image HorizontalAlignment="Left" Height="40" Margin="448,0,0,0" VerticalAlignment="Center" Width="41" Source="/Logo.png"/>
+            <Label x:Name="CryptographyWarning" Content="Внимание! Шифрование выключено." HorizontalAlignment="Left" Margin="69,0,0,0" VerticalAlignment="Center" Foreground="Red" Width="212" FontSize="11"/>
+            <Image x:Name="WarningIcon" HorizontalAlignment="Left" Height="20" Margin="46,0,0,0" VerticalAlignment="Center" Width="18" Source="/Warning.png" ToolTip="Внимание! Шифрование не выполняется."/>
+            <Button Content="[ ]" HorizontalAlignment="Left" Margin="1012,0,0,0" VerticalAlignment="Center" Width="37" Height="37" SnapsToDevicePixels="True" Background="{x:Null}" Foreground="White" Click="ClickMaximiz">
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF6F2586"/>
+                        <GradientStop Color="#FF3AC877" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+            </Button>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="297*"/>
+                <ColumnDefinition Width="821*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Margin="10,10,10,10">
+                <Grid.Effect>
+                    <DropShadowEffect/>
+                </Grid.Effect>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Block.png"/>
+                </Grid.Background>
+                <ListBox x:Name="ListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" SelectionChanged="SelectionChanged" BorderBrush="{x:Null}">
+                    <ListBox.Foreground>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF8EC7A9"/>
+                            <GradientStop Color="#FF60E29E" Offset="1"/>
+                        </RadialGradientBrush>
+                    </ListBox.Foreground>
+                </ListBox>
+
+            </Grid>
+            <Grid x:Name="MainInfoGrid" Margin="10,10,10,10" Grid.Column="1">
+                <Grid.Effect>
+                    <DropShadowEffect/>
+                </Grid.Effect>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Block.png" Stretch="Fill" TileMode="None" Opacity="1"/>
+                </Grid.Background>
+                <Label x:Name="NameLabel" Content="Название записи:" HorizontalAlignment="Left" Margin="42,24,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <TextBox x:Name="NameOutput" HorizontalAlignment="Left" Margin="50,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="{x:Null}" Foreground="#FFA5A5A5"/>
+                <Label x:Name="UrlLabel" Content="URL сайта:" HorizontalAlignment="Left" Margin="42,93,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <TextBox x:Name="UrlOutput" HorizontalAlignment="Left" Margin="50,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="{x:Null}" Foreground="#FFA5A5A5"/>
+                <Label x:Name="LoginLabel" Content="Логин:" HorizontalAlignment="Left" Margin="291,24,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <TextBox x:Name="LoginOutput" HorizontalAlignment="Left" Margin="302,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="{x:Null}" Foreground="#FFA5A5A5"/>
+                <Label x:Name="PassLabel" Content="Пароль:" HorizontalAlignment="Left" Margin="291,93,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <TextBox x:Name="PasswordOutput" HorizontalAlignment="Left" Margin="302,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="{x:Null}" Foreground="#FFA5A5A5" MouseLeftButtonDown="PassBoxClick" MouseEnter="PassBoxMousEnter" MouseLeave="PassBoxMouseLeave">
+                    <TextBox.Effect>
+                        <BlurEffect/>
+                    </TextBox.Effect>
+                </TextBox>
+                <Label x:Name="PhoneLabel" Content="Номер телефона:" HorizontalAlignment="Left" Margin="536,24,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <TextBox x:Name="PhoneOutput" HorizontalAlignment="Left" Margin="544,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="{x:Null}" Foreground="#FFA5A5A5"/>
+                <Label x:Name="EmailLabel" Content="Email:" HorizontalAlignment="Left" Margin="536,93,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <TextBox x:Name="EmailOutput" HorizontalAlignment="Left" Margin="544,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="{x:Null}" Foreground="#FFA5A5A5"/>
+                <Label x:Name="AdditionalLabel" Content="Дополнительная информация:" HorizontalAlignment="Left" Margin="42,159,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <TextBox x:Name="AdditionalOutput" HorizontalAlignment="Left" Margin="50,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="696" Background="{x:Null}" Foreground="#FFA5A5A5" Height="138"/>
+                <Button x:Name="OpenUrlBtnCMD" Content="Открыть URL" HorizontalAlignment="Left" Margin="600,352,0,0" VerticalAlignment="Top" Height="38" Width="152" Background="{x:Null}" Foreground="White" Click="ClickOpenUrl">
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFD20E56"/>
+                            <GradientStop Color="#FF3AC8AB" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                </Button>
+                <Button x:Name="EditBtnCMD" Content="Сохранить изменения" HorizontalAlignment="Left" Margin="437,352,0,0" VerticalAlignment="Top" Height="38" Width="152" Background="{x:Null}" Foreground="White" Click="CliclEditCmd">
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFD20E56"/>
+                            <GradientStop Color="#FF3A97C8" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                </Button>
+                <Button x:Name="DeleteBtnCMD" Content="Удалить" HorizontalAlignment="Left" Margin="272,352,0,0" VerticalAlignment="Top" Height="38" Width="152" Background="{x:Null}" Foreground="White" Click="ClickDelete">
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFD20E56"/>
+                            <GradientStop Color="#FFC8883A" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                </Button>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" Margin="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="167*"/>
+                <RowDefinition Height="247*"/>
+            </Grid.RowDefinitions>
+            <Button Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Top" Width="86" Foreground="White" HorizontalContentAlignment="Center" Height="50" BorderBrush="{x:Null}" Click="ClickAdd">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+                <Button.Background>
+                    <ImageBrush ImageSource="/Block.png"/>
+                </Button.Background>
+            </Button>
+            <Button Content="Удалить" HorizontalAlignment="Center" VerticalAlignment="Top" Width="86" Foreground="White" HorizontalContentAlignment="Center" Height="50" BorderBrush="{x:Null}" Margin="0,55,0,0" Click="ClickDelete">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+                <Button.Background>
+                    <ImageBrush ImageSource="/Block.png"/>
+                </Button.Background>
+            </Button>
+            <Button Content="Ещё..." HorizontalAlignment="Center" VerticalAlignment="Top" Width="86" Foreground="White" HorizontalContentAlignment="Center" Height="50" BorderBrush="{x:Null}" Margin="0,110,0,0">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+                <Button.Background>
+                    <ImageBrush ImageSource="/Block.png"/>
+                </Button.Background>
+            </Button>
+            <Grid Grid.Row="1" Margin="1,0,1,0">
+                <Grid.Effect>
+                    <DropShadowEffect/>
+                </Grid.Effect>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Block.png"/>
+                </Grid.Background>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
